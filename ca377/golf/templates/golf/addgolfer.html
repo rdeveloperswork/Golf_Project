@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+
+{% block css %}
+
+.container{
+  margin:50px;
+}
+
+input {
+  max-width: 15em;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+};
+  
+  
+{% endblock css %}
+  
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container text-center mb-40">
+  <div class="row justify-content-center">
+    <div class="col">
+
+
+      <h2>Add golfer</h2>
+    
+      <form action="" method="post" enctype="multipart/form-data">
+          {{ form |crispy }}
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

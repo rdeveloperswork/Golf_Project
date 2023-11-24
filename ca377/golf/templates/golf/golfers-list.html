@@ -1,0 +1,56 @@
+
+<div class="container-fluid text-center">
+    <div class="row my-auto justify-content-center">
+        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="col-md-2">
+                        <div class="card">
+                            <div>
+                                <img  style="height:70px;width:60px;margin:0;padding:0" src="https://via.placeholder.com/700x500.png/CB997E/333333?text=1" class="img-fluid">
+                            </div>
+                            <div class="card-text ml-auto text-align-left">
+                                <div class="card-img-overlay ml-10">kkk
+                                    <span class="badge text-bg-success">jjj</span>
+
+                                </div>  
+                                                       
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                {% for k in num_golfers2 %}
+                <div class="carousel-item">
+                    <div class="col-md-2">
+                        <div class="card">
+                            
+                            <div>
+                                <img src="/media/{{k.profile_pic}}" style="height:70px;width:60px;margin:0;padding:0" class="rounded float-start" alt="Profile Picture">
+                            </div>
+
+                            <div class="card-text ml-auto text-align-left">
+                                <div class="card-img-overlay ml-10">{{k.forename}} {{k.surname}}
+                                    <span class="badge rounded-pill  text-bg-dark">{{k.handicap}}</span>
+
+                                </div>  
+                                                       
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+                
+            </div>
+            <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>		
+</div>

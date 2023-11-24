@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+
+
+
+{% endblock css %}
+
+{% block content %}
+{% include 'navbar.html' %}
+
+<div class="container-fluid">
+  <video src="{% static 'bedminster-clip.mp4' %}" loop="loop" autoplay="autoplay" muted="muted" background="background" playsinline="" webkit-playsinline="" alt=".."></video>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-8">
+      <h1>For lovers of golf<span class="badge bg-secondary"></span></h1>
+      <p>
+        Welcome to the CA377 Golf Society web site. Here at CA377 we are
+        passionate about golf and we are always looking for new members.
+        We want you to love golf as much as we do.
+      </p>
+      <button type="button" class="btn btn-primary"><a href="{% url 'golferlist' %}">Golfers</a> </button>
+      <button type="button" class="btn btn-primary"><a href="{% url 'courselist' %}">Golf courses</a></button>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h3>Current record counts:</h3>
+      <ul>
+        <li>Golfers: {{ num_golfers }}</li>
+        <li>Courses: {{ num_courses }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<img src="" alt="">
+
+{% endblock content %}

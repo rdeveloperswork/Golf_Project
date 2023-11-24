@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+
+{% block css %}
+
+ul a{
+margin-top:0;
+}
+
+{% endblock css %}
+
+
+
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h2>Golf courses</h2>
+
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+
+      <ul>
+
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Details</th>
+            </tr>
+
+          </thead>
+          <tbody>
+            {% for c in courses %}
+            <tr>
+              <th scope="row">{{ c }}</th>
+              <td><a class="btn btn-outline-info" href="{% url 'coursedetails' c.id %}">[View details]</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+              <th scope="row">No courses yet.</th>
+
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+
+
+        <a class="btn btn-outline-primary" role="button" href="{% url 'addgolfcourse' %}">Add golf course</a>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

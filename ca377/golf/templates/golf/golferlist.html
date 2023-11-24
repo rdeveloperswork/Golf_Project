@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container pt-5">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="container m-10">
+        <div class="row">
+            <div class="col-3">
+                <a href="{% url 'addgolfer' %}" class="btn btn-warning ">Add golfer</a></li>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        {% for g in golfers %}
+        <div class="col-sm-3 mb-3 mb-sm-0 mt-5 pb-5">
+            <div class="card">
+                <img src="/media/{{g.profile_pic}}" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                    <h5 class="card-title">{{g.forename}} {{g.surname}}</h5>
+                    <a href="{% url 'golferdetails' g.id %}" class="btn btn-primary">Learn more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        
+
+
+    </div>
+</div>
+</div>
+{% endblock content %}
